@@ -1,0 +1,29 @@
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+
+# Visual Studio
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# JetBrains Rider
+.idea/
+
+# Build output
+*.apk
+*.aab
+*.unitypackage
