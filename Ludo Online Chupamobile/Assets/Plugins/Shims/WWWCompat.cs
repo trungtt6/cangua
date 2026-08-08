@@ -1,5 +1,8 @@
 // Unity 6 removed the legacy UnityEngine.WWW class. This shim re-implements it on top of
 // UnityWebRequest so that existing code that uses WWW continues to compile and run.
+// The guard below ensures the shim is only compiled in Unity 6+, where the original
+// class no longer exists, avoiding duplicate-type errors in older Unity versions.
+#if UNITY_6_0_OR_NEWER
 
 using System;
 using System.Collections.Generic;
@@ -102,3 +105,5 @@ namespace UnityEngine
         }
     }
 }
+
+#endif // UNITY_6_0_OR_NEWER

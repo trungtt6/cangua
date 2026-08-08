@@ -1,8 +1,12 @@
 // Minimal C# stub definitions for the Facebook Audience Network Unity SDK.
-// The real SDK ships only as native libraries (.aar / .framework).  These stubs
-// allow all C# code that references AudienceNetwork types to compile in editor
-// and CI environments where only the native binaries are present.
-// On-device builds continue to use the native libraries loaded by Unity.
+// The real SDK ships only as native libraries (.aar / .framework); there is no
+// C# DLL in this project, so these stubs provide the type definitions that game
+// scripts reference via "using AudienceNetwork;".
+//
+// If you later integrate a version of the SDK that includes a C# assembly, add the
+// scripting define symbol AUDIENCE_NETWORK_SDK_PRESENT to your Player Settings and
+// the stubs below will be excluded to avoid duplicate type errors.
+#if !AUDIENCE_NETWORK_SDK_PRESENT
 
 using System;
 using System.Collections;
@@ -82,3 +86,5 @@ namespace AudienceNetwork
         public void Dispose() { }
     }
 }
+
+#endif // !AUDIENCE_NETWORK_SDK_PRESENT
