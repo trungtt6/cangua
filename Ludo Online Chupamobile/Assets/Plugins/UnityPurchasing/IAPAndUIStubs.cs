@@ -49,10 +49,3 @@ namespace UnityEngine.Purchasing {
         public static void Initialize(IStoreListener listener, ConfigurationBuilder builder) { }
     }
 }
-
-namespace UnityEngine.UI {
-    public class Selectable : MonoBehaviour { }
-    public class Button : Selectable { }
-    public class Dropdown : Selectable { }
-    public class Text : MonoBehaviour { }
-}
