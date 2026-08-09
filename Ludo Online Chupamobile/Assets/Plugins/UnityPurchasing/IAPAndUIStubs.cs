@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace UnityEngine.Purchasing {
@@ -48,24 +47,6 @@ namespace UnityEngine.Purchasing {
 
     public static class UnityPurchasing {
         public static void Initialize(IStoreListener listener, ConfigurationBuilder builder) { }
-    }
-}
-
-// Minimal Unity Ads stubs (used by project scripts)
-namespace UnityEngine.Advertisements {
-    public enum ShowResult { Failed = 0, Skipped = 1, Finished = 2 }
-
-    public class ShowOptions {
-        public Action<ShowResult> resultCallback;
-    }
-
-    public static class Advertisement {
-        public static bool IsReady(string placementId = null) { return false; }
-        public static void Show() { }
-        public static void Show(string placementId) { }
-        public static void Show(string placementId, ShowOptions options) {
-            options?.resultCallback?.Invoke(ShowResult.Finished);
-        }
     }
 }
 
