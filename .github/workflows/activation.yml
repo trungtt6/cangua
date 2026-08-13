@@ -8,11 +8,11 @@ jobs:
     steps:
       - name: Request manual activation file
         id: getManualLicenseFile
-        uses: game-ci/unity-request-activation-file@v2.1.2
+        uses: game-ci/unity-request-activation-file@v4
         with:
           unityVersion: 2017.4.20f2
       - name: Expose as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.getManualLicenseFile.outputs.filePath }}
           path: ${{ steps.getManualLicenseFile.outputs.filePath }}
