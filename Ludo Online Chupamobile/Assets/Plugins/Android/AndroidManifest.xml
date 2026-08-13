@@ -31,6 +31,9 @@
     <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:exported="false" tools:node="merge" />
     <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" tools:node="merge" />
 
+    <!-- Fix Xiaomi UnityChannel.aar -->
+    <activity android:name="com.xiaomi.gamecenter.sdk.ui.MiActivity" android:exported="true" tools:node="merge" />
+
     <!-- Fix Unity IAP GooglePlay.aar for Android 12+ -->
     <activity android:name="com.unity.purchasing.googleplay.PurchaseActivity" android:exported="true" tools:node="merge" />
     <activity android:name="com.unity.purchasing.googleplay.VRPurchaseActivity" android:exported="true" tools:node="merge" />
