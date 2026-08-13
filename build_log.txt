@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.5/staging' branch; Version is '6000.5.6f1 (0e0577a1a2ac) revision 918903'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-08-13T16:17:44.9125351Z"
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 32679 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-08-08T15:45:37.0204759Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-08-08T15:45:37Z
+Date: 2026-08-13T16:17:44Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.exe
@@ -14,10 +14,9 @@ C:\Program Files\Unity\Hub\Editor\6000.5.6f1\Editor\Unity.exe
 -projectPath
 C:\deps\cangua\Ludo Online Chupamobile
 -executeMethod
-IntegrationBuild.PerformIntegrationBuild
--buildOutput C:\Users\User\\Desktop\\LudoIntegrationBuild -buildTarget Win
+AndroidBuild.PerformAndroidBuild
 -logFile
-build_log.txt
+C:\deps\cangua\build_log.txt
 Successfully changed project path to: C:\deps\cangua\Ludo Online Chupamobile
 C:/deps/cangua/Ludo Online Chupamobile
 Exiting without the bug reporter. Application will terminate with return code 1
