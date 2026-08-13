@@ -307,6 +307,8 @@ namespace UnityEditor.FacebookEditor
             if (exported)
             {
                 activityElement.SetAttribute("exported", ns, "true");
+            } else {
+                activityElement.SetAttribute("exported", ns, "false");
             }
 
             return activityElement;
