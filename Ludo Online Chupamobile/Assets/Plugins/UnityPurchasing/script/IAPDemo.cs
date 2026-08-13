@@ -22,7 +22,6 @@ U should buy the asset from home store if u use it in your project!
 // before receipt validation will compile in this sample.
 // #define RECEIPT_VALIDATION
 #endif
-#endif
 //#define DELAY_CONFIRMATION // Returns PurchaseProcessingResult.Pending from ProcessPurchase, then calls ConfirmPendingPurchase after a delay
 //#define USE_PAYOUTS // Enables use of PayoutDefinitions to specify what the player should receive when a product is purchased
 // Disabled to avoid compile errors when Unity Purchasing package isn't available

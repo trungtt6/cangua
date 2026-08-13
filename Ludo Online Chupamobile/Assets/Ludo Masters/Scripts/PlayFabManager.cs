@@ -77,7 +77,7 @@ public class PlayFabManager : Photon.PunBehaviour, IChatClientListener
         PhotonNetwork.PhotonServerSettings.HostType = ServerSettings.HostingOption.PhotonCloud;
         PhotonNetwork.PhotonServerSettings.PreferredRegion = CloudRegionCode.eu;
         // PhotonNetwork.PhotonServerSettings.HostType = ServerSettings.HostingOption.BestRegion;
-        // PhotonNetwork.PhotonServerSettings.AppID = StaticStrings.PhotonAppID;
+        PhotonNetwork.PhotonServerSettings.AppID = StaticStrings.PhotonAppID;
 #if UNITY_IOS
         PhotonNetwork.PhotonServerSettings.Protocol = ConnectionProtocol.Tcp;
 #else
@@ -796,16 +796,13 @@ public class PlayFabManager : Photon.PunBehaviour, IChatClientListener
 
         Debug.Log("UNIQUE IDENTIFIER: " + customId);
 
-        LoginWithCustomIDRequest request = new LoginWithCustomIDRequest()
+        PlayFabClientAPI.LoginWithAndroidDeviceID(new PlayFab.ClientModels.LoginWithAndroidDeviceIDRequest()
         {
             TitleId = PlayFabSettings.TitleId,
             CreateAccount = true,
-            CustomId = customId //SystemInfo.deviceUniqueIdentifier
-        };
-
-
-
-        PlayFabClientAPI.LoginWithCustomID(request, (result) =>
+            AndroidDeviceId = customId,
+            OS = "Android" // optional, but good for tracking
+        }, (result) =>
         {
             PlayFabId = result.PlayFabId;
             Debug.Log("Got PlayFabID: " + PlayFabId);

@@ -88,7 +88,7 @@ public class WinnerControllerScript : MonoBehaviour
                 reardShareText.GetComponent<Text>().text = "+" + StaticStrings.rewardCoinsForShareViaFacebook;
 
             // if (StaticStrings.showAdOnGameOverScene)
-            //     AdsManager.Instance.adsScript.ShowAd();
+            //     AdsManager.Instance.showAd();
 
             if (!PlayerPrefs.GetString("LoggedType").Equals("Facebook"))
             {
@@ -261,7 +261,7 @@ public class WinnerControllerScript : MonoBehaviour
     public void loadMenuScene()
     {
         // if (GameManager.Instance.offlineMode && StaticStrings.showAdWhenLeaveGame)
-        //     AdsManager.Instance.adsScript.ShowAd();
+        //     AdsManager.Instance.showAd();
         SceneManager.LoadScene("MenuScene");
         Debug.Log("Timeout 6");
         PhotonNetwork.BackgroundTimeout = StaticStrings.photonDisconnectTimeoutLong; ;

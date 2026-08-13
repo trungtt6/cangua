@@ -6,7 +6,7 @@
 // If you later integrate a version of the SDK that includes a C# assembly, add the
 // scripting define symbol AUDIENCE_NETWORK_SDK_PRESENT to your Player Settings and
 // the stubs below will be excluded to avoid duplicate type errors.
-#if !AUDIENCE_NETWORK_SDK_PRESENT
+#if false
 
 using System;
 using System.Collections;
@@ -87,4 +87,4 @@ namespace AudienceNetwork
     }
 }
 
-#endif // !AUDIENCE_NETWORK_SDK_PRESENT
+#endif // false

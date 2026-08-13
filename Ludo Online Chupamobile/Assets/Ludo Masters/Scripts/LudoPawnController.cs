@@ -379,13 +379,19 @@ public class LudoPawnController : MonoBehaviour
             currentAudioSource++;
         }
 
+        float elapsedTime = 0;
+        while (elapsedTime < time)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / time);
+            UpdatePosition(Vector2.Lerp(from, to, t));
+            yield return null;
+        }
+        UpdatePosition(to);
+
         if (last)
         {
-            iTween.ValueTo(gameObject, iTween.Hash("from", from, "to", to, "time", time, "easetype", iTween.EaseType.linear, "onupdate", "UpdatePosition", "oncomplete", "MoveFinished"));
-        }
-        else
-        {
-            iTween.ValueTo(gameObject, iTween.Hash("from", from, "to", to, "time", time, "easetype", iTween.EaseType.linear, "onupdate", "UpdatePosition"));
+            MoveFinished();
         }
 
     }

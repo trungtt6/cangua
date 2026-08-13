@@ -661,7 +661,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
             if (encryptionMode == EncryptionMode.DatagramEncryption && expectedProtocol != ConnectionProtocol.Udp)
             {
-                Debug.LogWarning("Expected protocol set to UDP, due to encryption mode DatagramEncryption. Changing protocol in PhotonServerSettings from: " + PhotonNetwork.PhotonServerSettings.Protocol);
+                UnityEngine.Debug.LogWarning("Expected protocol set to UDP, due to encryption mode DatagramEncryption. Changing protocol in PhotonServerSettings from: " + PhotonNetwork.PhotonServerSettings.Protocol);
                 PhotonNetwork.PhotonServerSettings.Protocol = ConnectionProtocol.Udp;
                 expectedProtocol = ConnectionProtocol.Udp;
             }

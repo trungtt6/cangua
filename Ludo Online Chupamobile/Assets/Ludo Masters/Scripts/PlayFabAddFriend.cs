@@ -79,7 +79,7 @@ public class PlayFabAddFriend : MonoBehaviour
     public void LeaveGame()
     {
         // if (StaticStrings.showAdWhenLeaveGame)
-        //     AdsManager.Instance.adsScript.ShowAd();
+        //     AdsManager.Instance.showAd();
         SceneManager.LoadScene("MenuScene");
         PhotonNetwork.BackgroundTimeout = StaticStrings.photonDisconnectTimeoutLong; ;
         Debug.Log("Timeout 3");

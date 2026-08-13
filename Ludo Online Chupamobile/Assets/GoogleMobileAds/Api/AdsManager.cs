@@ -40,7 +40,10 @@ public class AdsManager
 
     public void showAd(AdLocation location)
     {
-        adsScript.ShowAd(location);
+        if (adsScript != null)
+        {
+            adsScript.ShowAd(location);
+        }
     }
 
 }

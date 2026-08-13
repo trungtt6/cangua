@@ -36,12 +36,16 @@ namespace UnityEngine.Purchasing {
 
     public interface IExtensionProvider { }
 
+    // Commented out to prevent conflict with Stores.dll
+    /*
     public class StandardPurchasingModule {
         public static StandardPurchasingModule Instance() { return new StandardPurchasingModule(); }
     }
+    */
 
     public class ConfigurationBuilder {
-        public static ConfigurationBuilder Instance(StandardPurchasingModule module) { return new ConfigurationBuilder(); }
+        // Updated to not use the excluded StandardPurchasingModule directly
+        public static ConfigurationBuilder Instance(object module) { return new ConfigurationBuilder(); }
         public void AddProduct(string id, ProductType type) { }
     }
 
