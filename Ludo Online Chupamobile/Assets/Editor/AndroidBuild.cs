@@ -39,6 +39,8 @@ public class AndroidBuild
             return;
         }
 
+        PlayerSettings.Android.useCustomKeystore = false;
+
         BuildPlayerOptions options = new BuildPlayerOptions
         {
             scenes = scenes,
