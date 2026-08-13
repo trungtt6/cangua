@@ -44,11 +44,6 @@ jobs:
           buildName: LudoOnline
           versioning: Semantic
           androidExportType: androidPackage
-          androidKeystoreName: keystore.keystore
-          androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
-          androidKeyaliasName: ${{ secrets.ANDROID_KEY_ALIAS_NAME }}
-          androidKeyaliasPass: ${{ secrets.ANDROID_KEY_ALIAS_PASS }}
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
