@@ -207,6 +207,8 @@ namespace AudienceNetwork.Editor
             activityElement.SetAttribute ("name", ns, activityName);
             if (exported) {
                 activityElement.SetAttribute ("exported", ns, "true");
+            } else {
+                activityElement.SetAttribute ("exported", ns, "false");
             }
 
             if (customOptions != null) {

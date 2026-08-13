@@ -38,6 +38,12 @@
     <activity android:name="com.unity.purchasing.googleplay.PurchaseActivity" android:exported="true" tools:node="merge" />
     <activity android:name="com.unity.purchasing.googleplay.VRPurchaseActivity" android:exported="true" tools:node="merge" />
     
+    <!-- Fix UnityPlayerActivity in AudienceNetwork -->
+    <activity android:name="com.unity3d.player.UnityPlayerActivity" android:exported="true" tools:node="merge" />
+
+    <!-- Fix AudienceNetworkActivity -->
+    <activity android:name="com.facebook.ads.AudienceNetworkActivity" android:exported="false" tools:node="merge" />
+
     <!-- Fix Unity IAP AmazonAppStore.aar for Android 12+ -->
     <receiver android:name="com.amazon.device.iap.ResponseReceiver" android:exported="true" tools:node="merge" />
 
