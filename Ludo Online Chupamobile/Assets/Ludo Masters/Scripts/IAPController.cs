@@ -15,12 +15,9 @@ U should buy the asset from home store if u use it in your project!
 using UnityEngine;
 using System.Collections;
 using System;
-// Provide compatibility when Unity Purchasing package is not enabled
+
 #if UNITY_PURCHASING
 using UnityEngine.Purchasing;
-#else
-using UnityEngine.Purchasing;
-#endif
 
 public class IAPController : MonoBehaviour, IStoreListener
 {
@@ -120,5 +117,30 @@ public class IAPController : MonoBehaviour, IStoreListener
     }
 
 
+}
+#else
+public class IAPController : MonoBehaviour
+{
+    public string SKU_1000_COINS = "pool_5000_coins";
+    public string SKU_5000_COINS = "pool_10000_coins";
+    public string SKU_10000_COINS = "pool_25000_coins";
+    public string SKU_50000_COINS = "pool_75000_coins";
+    public string SKU_100000_COINS = "pool_200000_coins";
+
+    void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+        GameManager.Instance.IAPControl = this;
+    }
+
+    public void OnPurchaseClicked(int productId)
+    {
+        Debug.Log("IAP Disabled. Purchase clicked: " + productId);
+        if (productId == 1) GameManager.Instance.playfabManager.addCoinsRequest(5000);
+        else if (productId == 2) GameManager.Instance.playfabManager.addCoinsRequest(10000);
+        else if (productId == 3) GameManager.Instance.playfabManager.addCoinsRequest(25000);
+        else if (productId == 4) GameManager.Instance.playfabManager.addCoinsRequest(75000);
+        else if (productId == 5) GameManager.Instance.playfabManager.addCoinsRequest(200000);
+    }
 }
 #endif

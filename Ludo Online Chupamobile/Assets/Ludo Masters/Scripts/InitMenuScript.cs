@@ -118,7 +118,7 @@ public class InitMenuScript : MonoBehaviour
 
 
         Debug.Log("Load ad menu");
-        AdsManager.Instance.adsScript.ShowAd(AdLocation.GameStart);
+        AdsManager.Instance.showAd(AdLocation.GameStart);
 
         if (PlayerPrefs.GetInt("GamesPlayed", 1) % 8 == 0 && PlayerPrefs.GetInt("GameRated", 0) == 0)
         {
@@ -161,7 +161,7 @@ public class InitMenuScript : MonoBehaviour
                 break;
         }
         GameConfigurationScreen.SetActive(true);
-        AdsManager.Instance.adsScript.ShowAd(AdLocation.GamePropertiesWindow);
+        AdsManager.Instance.showAd(AdLocation.GamePropertiesWindow);
     }
 
     public void TakeScreenshot()
@@ -177,7 +177,7 @@ public class InitMenuScript : MonoBehaviour
 
     public void showAdStore()
     {
-        AdsManager.Instance.adsScript.ShowAd(AdLocation.StoreWindow);
+        AdsManager.Instance.showAd(AdLocation.StoreWindow);
     }
 
     public void backToMenuFromTableSelect()
@@ -193,7 +193,7 @@ public class InitMenuScript : MonoBehaviour
         if (!challengeFriend)
             GameManager.Instance.inviteFriendActivated = false;
 
-        AdsManager.Instance.adsScript.ShowAd(AdLocation.GameStart);
+        AdsManager.Instance.showAd(AdLocation.GameStart);
         if (GameManager.Instance.offlineMode)
         {
             TheMillButton.SetActive(false);
@@ -313,7 +313,7 @@ public class InitMenuScript : MonoBehaviour
     public void showFacebookFriends()
     {
 
-        AdsManager.Instance.adsScript.ShowAd(AdLocation.FacebookFriends);
+        AdsManager.Instance.showAd(AdLocation.FacebookFriends);
         GameManager.Instance.playfabManager.GetPlayfabFriends();
     }
 

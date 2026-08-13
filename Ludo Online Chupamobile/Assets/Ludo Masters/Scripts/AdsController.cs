@@ -301,8 +301,10 @@ public class AdsController : MonoBehaviour
 
         public override void init()
         {
-            Debug.Log("Init Chartboost");
+            // Debug.Log("Init Chartboost");
 
+            // Chartboost disabled intentionally
+            /*
 #if UNITY_IPHONE
 		    Chartboost.CreateWithAppId(ChartboostIOS_ID, ChartboostIOS_Signature);
 #elif UNITY_ANDROID
@@ -311,6 +313,7 @@ public class AdsController : MonoBehaviour
             Chartboost.didInitialize += didInitialize;
             Chartboost.didFailToLoadInterstitial += didFailToLoadInterstitial;
             Chartboost.didCloseInterstitial += didCloseInterstitial;
+            */
         }
 
         void didFailToLoadInterstitial(CBLocation location, CBImpressionError error)

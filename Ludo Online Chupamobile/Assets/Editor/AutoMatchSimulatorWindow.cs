@@ -2,6 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using AssemblyCSharp;
 
 public class AutoMatchSimulatorWindow : EditorWindow
 {

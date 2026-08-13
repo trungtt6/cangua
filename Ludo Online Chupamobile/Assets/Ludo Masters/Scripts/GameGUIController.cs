@@ -649,7 +649,7 @@ public class GameGUIController : PunBehaviour
         if (!FinishWindowActive)
         {
 
-            AdsManager.Instance.adsScript.ShowAd(AdLocation.GameFinishWindow);
+            AdsManager.Instance.showAd(AdLocation.GameFinishWindow);
             FinishWindowActive = true;
 
             List<PlayerObject> otherPlayers = new List<PlayerObject>();

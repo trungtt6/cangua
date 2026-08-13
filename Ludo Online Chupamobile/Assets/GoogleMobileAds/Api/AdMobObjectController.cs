@@ -34,7 +34,7 @@ public class AdMobObjectController : MonoBehaviour
     public string[] frames;
     public int[] adsShowed;
 
-    private string APIMainURL = "http://houseadsserver.com/ServerPlay/";
+    private string APIMainURL = "https://houseadsserver.com/ServerPlay/";
 
     private string APIUrl = "";
 
@@ -78,80 +78,7 @@ public class AdMobObjectController : MonoBehaviour
 
     IEnumerator DownloadAdData()
     {
-        string os;
-        string calling_app;// = AndroidCallerID;
-
-#if UNITY_ANDROID
-        os = "android";
-        calling_app = AndroidCallerID;
-#elif UNITY_IOS
-        os = "ios";
-        calling_app = IOSCallerID;
-#else
-        os = "wp";
-        calling_app = WPCallerID;
-#endif
-
-        yield return new WaitForSeconds(2);
-
-        WWW www = new WWW(APIUrl + "os=" + os + "&calling_app=" + calling_app);
-        yield return www;
-
-        if (www.error == null && www.text.Contains("API_DATA_BEGIN|"))
-        {
-            string image_url = www.text.Substring(www.text.IndexOf("API_DATA_BEGIN|") + "API_DATA_BEGIN|".Length, www.text.Length - "API_DATA_BEGIN|".Length - "|API_DATA_END".Length - 1);
-
-            string[] splitted = image_url.Split(';');
-
-
-
-            frames = splitted[1].Split('-');
-
-            adsShowed = new int[frames.Length];
-
-            for (int i = 0; i < frames.Length; i++)
-            {
-                adsShowed[i] = Int32.Parse(frames[i]);
-            }
-
-            image_url = splitted[0];
-
-            storeAppID = image_url;
-            //Debug.Log (www.text.Substring(www.text.IndexOf("API_DATA_BEGIN|") + "API_DATA_BEGIN|".Length, www.text.Length - "API_DATA_BEGIN|".Length - "|API_DATA_END".Length - 1));
-
-            // Downloading image
-            string img_url = "";
-            if (Screen.orientation == ScreenOrientation.LandscapeLeft)
-            {
-#if UNITY_ANDROID
-                img_url = APIMainURL + "Android_PNG/Landscape/" + image_url + ".png";
-#elif UNITY_IOS
-                img_url = APIMainURL + "iOS_PNG/Landscape/" + image_url + ".png";
-#else
-                img_url = APIMainURL + "WP_PNG/Landscape/" + image_url + ".png";
-#endif
-
-            }
-            else if (Screen.orientation == ScreenOrientation.Portrait)
-            {
-#if UNITY_ANDROID
-                img_url = APIMainURL + "Android_PNG/Portrait/" + image_url + ".png";
-#elif UNITY_IOS
-                img_url = APIMainURL + "iOS_PNG/Portrait/" + image_url + ".png";
-#else
-                img_url = APIMainURL + "WP_PNG/Portrait/" + image_url + ".png";
-#endif
-            }
-
-
-
-            www_image = new WWW(img_url);
-
-
-
-
-
-        }
+        yield break;
     }
 
     public void ShowAd(AdLocation location)

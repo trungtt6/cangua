@@ -45,39 +45,49 @@ public class MyPlayerData
 
     public int GetTotalEarnings()
     {
-        return int.Parse(this.data[TotalEarningsKey].Value);
+        if (this.data != null && this.data.ContainsKey(TotalEarningsKey))
+            return int.Parse(this.data[TotalEarningsKey].Value);
+        return 0;
     }
 
     public int GetTwoPlayerWins()
     {
-        return int.Parse(this.data[TwoPlayerWinsKey].Value);
+        if (this.data != null && this.data.ContainsKey(TwoPlayerWinsKey))
+            return int.Parse(this.data[TwoPlayerWinsKey].Value);
+        return 0;
     }
 
     public int GetFourPlayerWins()
     {
-        return int.Parse(this.data[FourPlayerWinsKey].Value);
+        if (this.data != null && this.data.ContainsKey(FourPlayerWinsKey))
+            return int.Parse(this.data[FourPlayerWinsKey].Value);
+        return 0;
     }
 
     public int GetPlayedGamesCount()
     {
-        if (this.data != null)
+        if (this.data != null && this.data.ContainsKey(GamesPlayedKey))
             return int.Parse(this.data[GamesPlayedKey].Value);
-        return -1;
+        return 0;
     }
 
     public string GetAvatarIndex()
     {
-        return this.data[AvatarIndexKey].Value;
+        if (this.data != null && this.data.ContainsKey(AvatarIndexKey))
+            return this.data[AvatarIndexKey].Value;
+        return "0";
     }
 
     public string GetChats()
     {
-        return this.data[ChatsKey].Value;
+        if (this.data != null && this.data.ContainsKey(ChatsKey))
+            return this.data[ChatsKey].Value;
+        return "";
     }
 
     public string GetEmoji()
     {
-        if (this.data.ContainsKey(EmojiKey))
+        if (this.data != null && this.data.ContainsKey(EmojiKey))
             return this.data[EmojiKey].Value;
         else return "error";
     }
@@ -91,17 +101,22 @@ public class MyPlayerData
 
     public string GetLastFortuneTime()
     {
-        if (this.data.ContainsKey(FortuneWheelLastFreeKey))
+        if (this.data != null && this.data.ContainsKey(FortuneWheelLastFreeKey))
         {
             return this.data[FortuneWheelLastFreeKey].Value;
-
         }
         else
         {
             string date = DateTime.Now.Ticks.ToString();
-            Dictionary<string, string> data = new Dictionary<string, string>();
-            data.Add(FortuneWheelLastFreeKey, date);
-            UpdateUserData(data);
+            
+            // Only update backend if PlayFab data has actually loaded (i.e. client is logged in)
+            if (this.data != null) 
+            {
+                Dictionary<string, string> data = new Dictionary<string, string>();
+                data.Add(FortuneWheelLastFreeKey, date);
+                UpdateUserData(data);
+            }
+            
             return date;
         }
     }

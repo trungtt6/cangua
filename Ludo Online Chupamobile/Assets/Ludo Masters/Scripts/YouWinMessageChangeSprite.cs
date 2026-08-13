@@ -50,7 +50,7 @@ public class YouWinMessageChangeSprite : MonoBehaviour
             SceneManager.LoadScene("MenuScene");
             PhotonNetwork.BackgroundTimeout = StaticStrings.photonDisconnectTimeoutLong; ;
             // if (GameManager.Instance.offlineMode && StaticStrings.showAdWhenLeaveGame)
-            //     AdsManager.Instance.adsScript.ShowAd();
+            //     AdsManager.Instance.showAd();
 
         }
         else
