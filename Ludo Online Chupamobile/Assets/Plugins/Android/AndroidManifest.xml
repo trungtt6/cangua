@@ -27,9 +27,19 @@
     <activity android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     
     <!-- Fix Unity IAP GooglePlay.aar for Android 12+ -->
+    <activity android:name="com.unity.purchasing.googleplay.PurchaseActivity" android:exported="true" tools:node="merge" />
     <activity android:name="com.unity.purchasing.googleplay.VRPurchaseActivity" android:exported="true" tools:node="merge" />
     
     <!-- Fix Unity IAP AmazonAppStore.aar for Android 12+ -->
     <receiver android:name="com.amazon.device.iap.ResponseReceiver" android:exported="true" tools:node="merge" />
+
+    <!-- Fix Unity IAP CloudMoolah.aar for Android 12+ -->
+    <activity android:name="com.cm.androidforunity.PaymentActivity" android:exported="true" tools:node="merge" />
+    <activity android:name="com.cm.androidforunity.WebActivity" android:exported="true" tools:node="merge" />
+
+    <!-- Fix Unity IAP SamsungApps.aar for Android 12+ -->
+    <activity android:name="com.samsung.android.sdk.iap.lib.activity.InboxActivity" android:exported="true" tools:node="merge" />
+    <activity android:name="com.samsung.android.sdk.iap.lib.activity.ItemActivity" android:exported="true" tools:node="merge" />
+    <activity android:name="com.samsung.android.sdk.iap.lib.activity.PaymentActivity" android:exported="true" tools:node="merge" />
   </application>
 </manifest>
