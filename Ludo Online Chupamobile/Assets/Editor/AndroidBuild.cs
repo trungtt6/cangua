@@ -19,10 +19,7 @@ public class AndroidBuild
 
         if (string.IsNullOrEmpty(outputPath))
         {
-            outputPath = System.IO.Path.Combine(
-                System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop),
-                "LudoAndroidBuild"
-            );
+            outputPath = "../build/Android";
         }
 
         System.IO.Directory.CreateDirectory(outputPath);
